@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+        #time{
+            text-align: center;
+            font-size: 50px;
+            color: red;
+        }
+        .bu{
+            
+            font-size: 40px;
+            border: 3px solid red;
+            border-radius: 5px;
+            color: yellow;
+            background-color: cornflowerblue;
+            height: 60px;
+            width: 100px;
+
+        }
+        .bu:hover{
+            color: chocolate;
+        }
+        h1{
+            text-align: center;
+            color: darkblue;
+            font-size: 50px;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Clock</h1>
+    <button onclick="startclock(clock)" class="bu">Start</button>
+    <p id="time"></p>
+    <button onclick="clearInterval(clock)" class="bu">Stop</button>
+   <Script>
+    function startclock(){
+        clock=setInterval(clocktiming,1000);
+    }
+    var clock=setInterval(clocktiming,1000);
+    function clocktiming(){
+        var date=new Date();
+        var sun=date.toLocaleTimeString();
+        document.getElementById("time").innerHTML=sun;
+    }
+   </Script> 
+</body>
+</html>
